@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "LSM Portfolio",
+  title: "kaicosmic",
   description: "Backend Security Focused MERN Stack Developer",
 };
 

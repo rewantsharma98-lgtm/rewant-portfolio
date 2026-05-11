@@ -30,12 +30,12 @@ export default function Home() {
         <About />
 
         <Terminal />
+        
+        <FeaturedProject />
    
         <CurrentlyExploring />
 
         <Skills />
-
-        <FeaturedProject />
 
         <Experience />
 

@@ -1,0 +1,141 @@
+/* ============================================
+   KAI COSMIC — LAYOUT GRID (v4)
+   Newspaper editorial grid — borders as structure
+   ============================================ */
+
+/* ---- MAGAZINE WRAPPER ---- */
+.magazine {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  border-left:  1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+
+@media (max-width: 480px) {
+  .magazine {
+    border-left: none;
+    border-right: none;
+  }
+}
+
+/* ---- EVERY SECTION GETS A TOP BORDER ---- */
+.section {
+  position: relative;
+  border-top: 1px solid var(--border);
+}
+
+/* ---- TWO COLUMN — balanced ---- */
+.grid-2up {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 860px) {
+  .grid-2up { grid-template-columns: 1fr; }
+}
+
+/* ---- TWO COLUMN — 40/60 asymmetric ---- */
+.grid-40-60 {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
+@media (max-width: 860px) {
+  .grid-40-60 { grid-template-columns: 1fr; }
+}
+
+/* ---- THREE COLUMN ---- */
+.grid-3up {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 860px) {
+  .grid-3up { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 500px) {
+  .grid-3up { grid-template-columns: 1fr; }
+}
+
+/* ---- MISSION CARDS — 3 cols → 2 → 1 ---- */
+.grid-missions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 960px) {
+  .grid-missions { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 580px) {
+  .grid-missions { grid-template-columns: 1fr; }
+}
+
+/* ---- SIGNAL CARDS — 4 cols → 2 → 1 ---- */
+.grid-signal {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 700px) {
+  .grid-signal { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 400px) {
+  .grid-signal { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---- GRID CELL — right + bottom border ---- */
+.grid-cell {
+  border-right:  1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+/* Mission grid border fixes */
+.grid-missions .grid-cell:nth-child(3n)  { border-right: none; }
+
+@media (max-width: 960px) {
+  .grid-missions .grid-cell:nth-child(3n)   { border-right: 1px solid var(--border); }
+  .grid-missions .grid-cell:nth-child(even) { border-right: none; }
+}
+
+@media (max-width: 580px) {
+  .grid-missions .grid-cell                 { border-right: none; }
+}
+
+/* Signal grid border fixes */
+.grid-signal .grid-cell:nth-child(4n) { border-right: none; }
+
+@media (max-width: 700px) {
+  .grid-signal .grid-cell:nth-child(4n)   { border-right: 1px solid var(--border); }
+  .grid-signal .grid-cell:nth-child(even) { border-right: none; }
+}
+
+/* ---- COLUMN BORDERS — separator between left/right cols ---- */
+.col-left {
+  border-right: 1px solid var(--border);
+}
+
+@media (max-width: 860px) {
+  .col-left { border-right: none; border-bottom: 1px solid var(--border); }
+}
+
+/* ---- SECTION PAD ---- */
+.pad    { padding: var(--s9) var(--s8); }
+.pad-md { padding: var(--s7) var(--s8); }
+.pad-sm { padding: var(--s6) var(--s7); }
+
+@media (max-width: 768px) {
+  .pad    { padding: var(--s7) var(--s5); }
+  .pad-md { padding: var(--s6) var(--s5); }
+  .pad-sm { padding: var(--s5) var(--s4); }
+}
+
+@media (max-width: 480px) {
+  .pad    { padding: var(--s6) var(--s4); }
+  .pad-md { padding: var(--s5) var(--s4); }
+  .pad-sm { padding: var(--s4) var(--s3); }
+}
